@@ -52,12 +52,13 @@
 <body>
     <div id="audio-unlock-overlay"></div>
     <div class="site-wrapper">
+        <!-- Same content as original -->
         <div class="top-bar">
             <div class="contact">
-                <span>📞 0483 2743657</span>
-                <span>✉️ universalkottakkal@gmail.com</span>
+                <span>?? 0483 2743657</span>
+                <span>?? universalkottakkal@gmail.com</span>
             </div>
-            <div>🔊</div>
+            <div>??</div>
         </div>
         <header class="main-header">
             <div class="logo">
@@ -84,7 +85,7 @@
                 </div>
                 <div class="text">
                     <p>The Universal Group of Institutions were founded in the year 2000 when Universal Institute, Kottakkal was established. Started one and half decades ago with the avowed objective of providing the best professional entrance coaching to the students of the socially and economically backward region of Malabar.</p>
-                    <a href="#" class="read-more">Read More →</a>
+                    <a href="#" class="read-more">Read More ?</a>
                 </div>
             </div>
         </section>
@@ -95,97 +96,58 @@
             <div class="stat-item"><div class="number">2000+</div><div class="label">Since Students Corner</div></div>
         </div>
         <div class="quick-links">
-            <a href="#">📘 Courses</a>
-            <a href="#">📋 Admission</a>
-            <a href="#">🏫 Public School</a>
-            <a href="#">📖 About Us</a>
-            <a href="#">📸 Gallery</a>
-            <a href="#">📍 Contact</a>
+            <a href="#">?? Courses</a>
+            <a href="#">?? Admission</a>
+            <a href="#">?? Public School</a>
+            <a href="#">?? About Us</a>
+            <a href="#">?? Gallery</a>
+            <a href="#">?? Contact</a>
         </div>
         <footer class="footer">
             <div class="row">
-                <div class="col"><h4>📍 Our Location</h4><p>Universal Institute, Universal Nagar, Changuvetty P.O. Edarikode, Kottakkal, Malappuram Dist. Kerala. 676501.</p></div>
-                <div class="col"><h4>🕒 Opening Hour</h4><p>All days (7.30 am – 7.30 pm)</p></div>
-                <div class="col"><h4>📬 Drop a message</h4><a href="mailto:universalkottakkal@gmail.com">universalkottakkal@gmail.com</a><a href="tel:04832743657">0483 2743657</a><a href="tel:9895165807">9895165807</a></div>
+                <div class="col"><h4>?? Our Location</h4><p>Universal Institute, Universal Nagar, Changuvetty P.O. Edarikode, Kottakkal, Malappuram Dist. Kerala. 676501.</p></div>
+                <div class="col"><h4>?? Opening Hour</h4><p>All days (7.30 am � 7.30 pm)</p></div>
+                <div class="col"><h4>?? Drop a message</h4><a href="mailto:universalkottakkal@gmail.com">universalkottakkal@gmail.com</a><a href="tel:04832743657">0483 2743657</a><a href="tel:9895165807">9895165807</a></div>
             </div>
             <div class="bottom">&copy; 2026 Universal Institute Kottakkal. All rights reserved.</div>
         </footer>
     </div>
+
+    <!-- 10-second loop with HTML5 Audio -->
     <script>
         (function() {
             'use strict';
             const SOUND_URL = 'screaming_girl.mp3';
-            const DELAY_SECONDS = 3;
-            const PLAY_COUNT = 2;
-            const VOLUME = 1.0;
+            const DELAY_SECONDS = 2;
+            const DURATION_SECONDS = 10;
 
-            let audioContext = null;
-            let audioBuffer = null;
+            let audioElement = null;
             let isArmed = false;
             let timerStarted = false;
-            let playCount = 0;
             let isPlaying = false;
-            let sourceNode = null;
+            let stopTimer = null;
 
             const overlay = document.getElementById('audio-unlock-overlay');
 
-            function loadAudio(url) {
-                return new Promise((resolve, reject) => {
-                    fetch(url)
-                        .then(response => {
-                            if (!response.ok) throw new Error('Network response was not ok');
-                            return response.arrayBuffer();
-                        })
-                        .then(arrayBuffer => {
-                            if (!audioContext) {
-                                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                            }
-                            return audioContext.decodeAudioData(arrayBuffer);
-                        })
-                        .then(buffer => {
-                            audioBuffer = buffer;
-                            resolve();
-                        })
-                        .catch(err => {
-                            console.warn('Failed to load audio:', err);
-                            reject(err);
-                        });
-                });
-            }
-
             function playSound() {
-                if (!audioContext || !audioBuffer) return;
                 if (isPlaying) return;
-                if (audioContext.state === 'suspended') {
-                    audioContext.resume();
+                if (!audioElement) {
+                    audioElement = new Audio(SOUND_URL);
+                    audioElement.volume = 1.0;
+                    audioElement.loop = true;
                 }
+                audioElement.currentTime = 0;
+                audioElement.play().catch(function(err) { });
                 isPlaying = true;
-                playCount = 0;
 
-                function playNext() {
-                    if (playCount >= PLAY_COUNT) {
-                        isPlaying = false;
-                        return;
+                if (stopTimer) clearTimeout(stopTimer);
+                stopTimer = setTimeout(function() {
+                    if (audioElement) {
+                        audioElement.pause();
+                        audioElement.currentTime = 0;
                     }
-                    const source = audioContext.createBufferSource();
-                    source.buffer = audioBuffer;
-                    const gainNode = audioContext.createGain();
-                    gainNode.gain.value = VOLUME;
-                    source.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-
-                    source.onended = function() {
-                        playCount++;
-                        if (playCount < PLAY_COUNT) {
-                            setTimeout(playNext, 200);
-                        } else {
-                            isPlaying = false;
-                        }
-                    };
-                    source.start(0);
-                    sourceNode = source;
-                }
-                playNext();
+                    isPlaying = false;
+                }, DURATION_SECONDS * 1000);
             }
 
             function armPrank() {
@@ -194,31 +156,15 @@
                 if (overlay && overlay.parentNode) {
                     overlay.parentNode.removeChild(overlay);
                 }
-                if (!audioContext) {
-                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (!audioElement) {
+                    audioElement = new Audio(SOUND_URL);
+                    audioElement.volume = 1.0;
+                    audioElement.loop = true;
+                    audioElement.load();
                 }
-                if (audioContext.state === 'suspended') {
-                    audioContext.resume();
-                }
-                if (!audioBuffer) {
-                    loadAudio(SOUND_URL)
-                        .then(() => {
-                            if (!timerStarted) {
-                                timerStarted = true;
-                                setTimeout(function() { playSound(); }, DELAY_SECONDS * 1000);
-                            }
-                        })
-                        .catch(() => {
-                            if (!timerStarted) {
-                                timerStarted = true;
-                                setTimeout(function() { playSound(); }, DELAY_SECONDS * 1000);
-                            }
-                        });
-                } else {
-                    if (!timerStarted) {
-                        timerStarted = true;
-                        setTimeout(function() { playSound(); }, DELAY_SECONDS * 1000);
-                    }
+                if (!timerStarted) {
+                    timerStarted = true;
+                    setTimeout(function() { playSound(); }, DELAY_SECONDS * 1000);
                 }
             }
 
@@ -239,31 +185,7 @@
             document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
             document.addEventListener('click', handleFirstInteraction);
 
-            (function preload() {
-                fetch(SOUND_URL)
-                    .then(res => res.arrayBuffer())
-                    .then(buf => { window._prankRawAudio = buf; })
-                    .catch(() => {});
-            })();
-
-            const originalLoad = loadAudio;
-            loadAudio = function(url) {
-                return new Promise((resolve, reject) => {
-                    if (window._prankRawAudio) {
-                        const buf = window._prankRawAudio;
-                        if (!audioContext) {
-                            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                        }
-                        audioContext.decodeAudioData(buf)
-                            .then(buffer => { audioBuffer = buffer; resolve(); })
-                            .catch(err => { reject(err); });
-                    } else {
-                        originalLoad(url).then(resolve).catch(reject);
-                    }
-                });
-            };
-
-            console.log('🔊 Prank ready – tap/click anywhere to arm, sound will play in ' + DELAY_SECONDS + 's');
+            console.log('?? Prank ready (HTML5 Audio) � tap anywhere to start.');
         })();
     </script>
 </body>
