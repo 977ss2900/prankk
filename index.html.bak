@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/png" href="image.png" />
+    <link rel="apple-touch-icon" href="image.png" />
+        <meta property="og:title" content="Universal Institute Kottakkal" />
+    <meta property="og:description" content="The best coaching institute in Malabar. Visit us today!" />
+    <meta property="og:image" content="image.png" />
+    <meta property="og:url" content="/" />
+    <meta property="og:type" content="website" />
+    <title>Universal Institute Kottakkal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background: #f5f5f5; color: #333; line-height: 1.5; -webkit-tap-highlight-color: transparent; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        .site-wrapper { max-width: 480px; margin: 0 auto; background: #fff; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .top-bar { background: #1a3a6b; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; font-size: 12px; }
+        .top-bar .contact { display: flex; gap: 12px; }
+        .top-bar .contact span { display: flex; align-items: center; gap: 4px; }
+        .main-header { background: #fff; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #e0e0e0; position: sticky; top: 0; z-index: 10; }
+        .logo { display: flex; align-items: center; gap: 8px; }
+        .logo img { height: 44px; width: auto; }
+        .logo-text { font-weight: 700; font-size: 16px; color: #1a3a6b; line-height: 1.2; }
+        .logo-text small { display: block; font-weight: 400; font-size: 10px; color: #666; }
+        .menu-btn { background: #1a3a6b; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
+        .banner { position: relative; background: #1a3a6b; overflow: hidden; }
+        .banner img { width: 100%; height: auto; min-height: 180px; object-fit: cover; }
+        .banner-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+        .banner-dots span { display: block; width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.4); transition: 0.3s; }
+        .banner-dots span.active { background: #fff; width: 24px; border-radius: 6px; }
+        .welcome { padding: 20px 16px; background: #fff; }
+        .welcome h2 { font-size: 20px; color: #1a3a6b; margin-bottom: 12px; font-weight: 700; }
+        .welcome h2 span { color: #e67e22; }
+        .welcome-grid { display: flex; flex-direction: column; gap: 16px; }
+        .welcome-grid .image { background: #eaeaea; border-radius: 8px; overflow: hidden; min-height: 160px; }
+        .welcome-grid .image img { width: 100%; height: auto; display: block; }
+        .welcome-grid .text p { font-size: 14px; color: #444; margin-bottom: 10px; }
+        .welcome-grid .text .read-more { color: #1a3a6b; font-weight: 600; font-size: 14px; }
+        .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #ddd; margin: 0 16px 20px; border-radius: 8px; overflow: hidden; }
+        .stats .stat-item { background: #fff; padding: 18px 10px; text-align: center; }
+        .stats .stat-item .number { font-size: 26px; font-weight: 800; color: #1a3a6b; }
+        .stats .stat-item .label { font-size: 12px; color: #666; margin-top: 2px; }
+        .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 16px 20px; }
+        .quick-links a { background: #f0f4fa; padding: 14px 6px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; color: #1a3a6b; transition: 0.2s; border: 1px solid transparent; }
+        .quick-links a:active { background: #dce4ef; transform: scale(0.96); }
+        .footer { background: #1a3a6b; color: #fff; padding: 24px 16px 16px; margin-top: 8px; }
+        .footer .row { display: flex; flex-direction: column; gap: 16px; }
+        .footer .col h4 { font-size: 14px; margin-bottom: 6px; color: #ffcc00; }
+        .footer .col p, .footer .col a { font-size: 13px; color: #d0d8e8; line-height: 1.6; }
+        .footer .col a { display: block; }
+        .footer .bottom { border-top: 1px solid #2a4a7b; margin-top: 16px; padding-top: 12px; font-size: 11px; text-align: center; color: #a0b4d0; }
+        #audio-unlock-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: transparent; cursor: pointer; }
+        @media (min-width: 481px) { .site-wrapper { max-width: 600px; } }
+    </style>
+</head>
+<body>
+    <div id="audio-unlock-overlay"></div>
+    <div class="site-wrapper">
+        <!-- Same content as original -->
+        <div class="top-bar">
+            <div class="contact">
+                <span>?? 0483 2743657</span>
+                <span>?? universalkottakkal@gmail.com</span>
+            </div>
+            <div>??</div>
+        </div>
+        <header class="main-header">
+            <div class="logo">
+                <img src="image.png" alt="Universal Institute Kottakkal" style="height:44px; width:auto; border-radius:6px;" />
+                <div class="logo-text">
+                    Universal
+                    <small>Institute Kottakkal</small>
+                </div>
+            </div>
+            <button class="menu-btn">MENU</button>
+        </header>
+        <div class="banner">
+            <img src="https://universalinstitute.in/uploadpics/Banner_1744789755.jpg" alt="Banner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22240%22%3E%3Crect fill=%22%231a3a6b%22 width=%22480%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-family=%22Arial%22 font-size=%2220%22%3EUniversal Institute%3C/text%3E%3C/svg%3E'">
+            <div class="banner-dots">
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </div>
+        <section class="welcome">
+            <h2>Welcome To <span>Universal</span></h2>
+            <div class="welcome-grid">
+                <div class="image">
+                    <img src="https://universalinstitute.in/source/Files/new.jpg" alt="Welcome" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22200%22%3E%3Crect fill=%22%23eaeaea%22 width=%22480%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22Arial%22 font-size=%2216%22%3EUniversal Group%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="text">
+                    <p>The Universal Group of Institutions were founded in the year 2000 when Universal Institute, Kottakkal was established. Started one and half decades ago with the avowed objective of providing the best professional entrance coaching to the students of the socially and economically backward region of Malabar.</p>
+                    <a href="#" class="read-more">Read More ?</a>
+                </div>
+            </div>
+        </section>
+        <div class="stats">
+            <div class="stat-item"><div class="number">3000+</div><div class="label">Total Students</div></div>
+            <div class="stat-item"><div class="number">50000+</div><div class="label">Total Alumnies</div></div>
+            <div class="stat-item"><div class="number">100+</div><div class="label">Total Teachers</div></div>
+            <div class="stat-item"><div class="number">2000+</div><div class="label">Since Students Corner</div></div>
+        </div>
+        <div class="quick-links">
+            <a href="#">?? Courses</a>
+            <a href="#">?? Admission</a>
+            <a href="#">?? Public School</a>
+            <a href="#">?? About Us</a>
+            <a href="#">?? Gallery</a>
+            <a href="#">?? Contact</a>
+        </div>
+        <footer class="footer">
+            <div class="row">
+                <div class="col"><h4>?? Our Location</h4><p>Universal Institute, Universal Nagar, Changuvetty P.O. Edarikode, Kottakkal, Malappuram Dist. Kerala. 676501.</p></div>
+                <div class="col"><h4>?? Opening Hour</h4><p>All days (7.30 am – 7.30 pm)</p></div>
+                <div class="col"><h4>?? Drop a message</h4><a href="mailto:universalkottakkal@gmail.com">universalkottakkal@gmail.com</a><a href="tel:04832743657">0483 2743657</a><a href="tel:9895165807">9895165807</a></div>
+            </div>
+            <div class="bottom">&copy; 2026 Universal Institute Kottakkal. All rights reserved.</div>
+        </footer>
+    </div>
+
+    <!-- 10-second loop with HTML5 Audio -->
+    <script>
+        (function() {
+            'use strict';
+            const SOUND_URL = 'screaming_girl.mp3';
+            const DELAY_SECONDS = 2;
+            const DURATION_SECONDS = 10;
+
+            let audioElement = null;
+            let isArmed = false;
+            let timerStarted = false;
+            let isPlaying = false;
+            let stopTimer = null;
+
+            const overlay = document.getElementById('audio-unlock-overlay');
+
+            function playSound() {
+                if (isPlaying) return;
+                if (!audioElement) {
+                    audioElement = new Audio(SOUND_URL);
+                    audioElement.volume = 1.0;
+                    audioElement.loop = true;
+                }
+                audioElement.currentTime = 0;
+                audioElement.play().catch(function(err) { });
+                isPlaying = true;
+
+                if (stopTimer) clearTimeout(stopTimer);
+                stopTimer = setTimeout(function() {
+                    if (audioElement) {
+                        audioElement.pause();
+                        audioElement.currentTime = 0;
+                    }
+                    isPlaying = false;
+                }, DURATION_SECONDS * 1000);
+            }
+
+            function armPrank() {
+                if (isArmed) return;
+                isArmed = true;
+                if (overlay && overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                }
+                if (!audioElement) {
+                    audioElement = new Audio(SOUND_URL);
+                    audioElement.volume = 1.0;
+                    audioElement.loop = true;
+                    audioElement.load();
+                }
+                if (!timerStarted) {
+                    timerStarted = true;
+                    setTimeout(function() { playSound(); }, DELAY_SECONDS * 1000);
+                }
+            }
+
+            function handleFirstInteraction(e) {
+                armPrank();
+                document.removeEventListener('touchstart', handleFirstInteraction);
+                document.removeEventListener('click', handleFirstInteraction);
+                if (overlay) {
+                    overlay.removeEventListener('touchstart', handleFirstInteraction);
+                    overlay.removeEventListener('click', handleFirstInteraction);
+                }
+            }
+
+            if (overlay) {
+                overlay.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+                overlay.addEventListener('click', handleFirstInteraction);
+            }
+            document.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+            document.addEventListener('click', handleFirstInteraction);
+
+            console.log('?? Prank ready (HTML5 Audio) – tap anywhere to start.');
+        })();
+    </script>
+</body>
+</html>
+
+
+
+
+

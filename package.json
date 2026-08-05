@@ -1,0 +1,9 @@
+{
+  "name": "prank-site",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vercel/blob": "^0.23.0",
+    "express": "^5.2.1",
+    "ua-parser-js": "^1.0.38"
+  }
+}
